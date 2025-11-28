@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "/NRT-conservancies-dashboard/",
   build: {
     chunkSizeWarningLimit: 1600, // Optional: Increases the warning limit
     rollupOptions: {
