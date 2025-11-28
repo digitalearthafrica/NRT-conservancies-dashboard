@@ -33,7 +33,7 @@ const SidePanel = ({ conservancyName, onClose }) => {
     
     // 2. Construct path: public/figs/Naapu/Naapu_fc.json
     // NOTE: This assumes folder name and file prefix match conservancyName exactly
-    const fileName = `/figs/${conservancyName}/${conservancyName}${currentTab.suffix}.json`;
+    const fileName = `${import.meta.env.BASE_URL}figs/${conservancyName}/${conservancyName}${currentTab.suffix}.json`;
 
     console.log(`Fetching: ${fileName}`);
 
@@ -139,7 +139,7 @@ function App() {
 
   // ... [Previous Fetching & Sorting Code remains same] ...
   useEffect(() => {
-    fetch('/NRT_Conservancies.geojson') 
+    fetch(import.meta.env.BASE_URL + '/NRT_Conservancies.geojson') 
       .then(response => {
           if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
           return response.json();
